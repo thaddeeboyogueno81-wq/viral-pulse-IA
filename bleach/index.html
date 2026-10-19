@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEACH — Soul Society Experience</title>
+<meta name="description" content="Site fan interactif dédié à Bleach : chronologie animée 2001-2026, zanpakutō, bankai, openings, endings et OSTs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Noto+Serif+JP:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="particles"></canvas>
+<div id="cursor-glow"></div>
+<div id="reiatsu-bar"><div id="reiatsu-fill"></div><span id="reiatsu-year">2001</span></div>
+
+<header id="nav">
+  <div class="logo">BLE<span>ACH</span></div>
+  <nav>
+    <a href="#hero">Accueil</a>
+    <a href="#timeline">Chronologie</a>
+    <a href="#zanpakuto">Zanpakutō</a>
+    <a href="#musique">Musique</a>
+  </nav>
+  <button id="theme-btn" title="Changer de monde">☽ Hueco Mundo</button>
+</header>
+
+<section id="hero">
+  <div class="hero-layer" data-depth="0.2" id="hero-kanji">卍</div>
+  <div class="hero-layer" data-depth="0.5" id="hero-katana">
+    <svg viewBox="0 0 200 520" aria-hidden="true">
+      <defs>
+        <linearGradient id="hg" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#2b2b30"/>
+          <stop offset="0.5" stop-color="#cfd3d8"/>
+          <stop offset="1" stop-color="#222"/>
+        </linearGradient>
+      </defs>
+      <circle cx="100" cy="240" r="150" fill="#e63946" opacity="0.10"/>
+      <path d="M100 10 L112 80 L112 330 L88 330 L88 80 Z" fill="url(#hg)"/>
+      <line x1="103" y1="80" x2="103" y2="330" stroke="#fff" stroke-width="2" opacity="0.7"/>
+      <ellipse cx="100" cy="342" rx="36" ry="9" fill="#8d0801"/>
+      <rect x="90" y="330" width="20" height="16" fill="#b08d57"/>
+      <rect x="91" y="348" width="18" height="110" rx="8" fill="#1a1a1a"/>
+      <rect x="91" y="452" width="18" height="12" rx="4" fill="#8d0801"/>
+    </svg>
+  </div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Site fan non officiel — depuis 2001 jusqu'en 2026</p>
+    <h1 class="glitch" data-text="BLEACH">BLEACH</h1>
+    <p class="hero-sub">Death. The End. and Beyond.<br>Descends dans le Garganta : l'évolution du manga se déroule sous tes yeux.</p>
+    <div class="hero-cta">
+      <a href="#timeline" class="btn btn-red">Commencer le voyage ▾</a>
+      <a href="#musique" class="btn btn-ghost">Écouter les OST</a>
+    </div>
+  </div>
+  <div id="scroll-cue"><span></span></div>
+</section>
+
+<section id="timeline">
+  <h2 class="section-title reveal">La Chronologie <em>2001 → 2026</em></h2>
+  <p class="section-sub reveal">Scroll : chaque époque transforme le monde autour de toi.</p>
+  <div class="timeline-wrap">
+    <aside id="era-visual" aria-hidden="true">
+      <div id="era-kanji">始</div>
+      <div id="era-year">2001</div>
+    </aside>
+    <div id="era-track"></div>
+  </div>
+</section>
+
+<section id="zanpakuto">
+  <h2 class="section-title reveal">Zanpakutō <em>& Bankai</em></h2>
+  <p class="section-sub reveal">Clique sur une carte pour libérer le Bankai. Bouge la souris pour l'effet 3D.</p>
+  <div id="cards"></div>
+</section>
+
+<section id="musique">
+  <h2 class="section-title reveal">Openings, Endings <em>& OSTs</em></h2>
+  <p class="section-sub reveal">Lecteur intégré — playlist officielle via YouTube.</p>
+  <div class="music-tabs reveal">
+    <button class="mtab active" data-type="Opening">Openings</button>
+    <button class="mtab" data-type="Ending">Endings</button>
+    <button class="mtab" data-type="OST">OSTs</button>
+  </div>
+  <div id="music-grid"></div>
+</section>
+
+<footer>
+  <p>BLEACH © Tite Kubo / Shueisha · TV Tokyo · Ce site est un <strong>fan-site non officiel</strong> sans but commercial.</p>
+  <p class="foot-note">Bankai : deploy. Vercel. Code pushed with ♥ reiatsu.</p>
+</footer>
+
+<div id="player-modal" aria-hidden="true">
+  <div class="modal-box">
+    <button id="player-close">✕</button>
+    <h3 id="player-title"></h3>
+    <div id="player-frame"></div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
