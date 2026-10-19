@@ -1,28 +1,32 @@
-# BLEACH — Soul Society Experience 🗡️
+# LE DERNIER RYŪ — Court-métrage animé 🎬
 
-Site fan **interactif et animé en 3D** dédié à Bleach (Tite Kubo). Scroll-driven, chronologie immersive 2001 → 2026, fiches Zanpakutō/Bankai, et lecteur musical (openings, endings, OSTs).
+Site web qui joue **« Le Dernier Ryū »**, un court-métrage d'animation **original** de 7 minutes, entièrement créé en code (Canvas / JavaScript) — aucune image, aucune vidéo : chaque image est dessinée en temps réel par le navigateur.
 
-## ✨ Fonctionnalités
-- **Hero 3D** : parallaxe à la souris, katana SVG flottant, titre glitch.
-- **Chronologie scrollée 2001 → 2026** : le fond, le kanji et les couleurs changent à chaque ère du manga (Shonen Jump → Soul Society → Arrancar → Fullbring → TYBW → 2026).
-- **Cartes Zanpakutō 3D** : tilt au survol, flip au clic pour révéler le **Bankai** (Ichigo, Rukia, Byakuya, Kenpachi, Hitsugaya, Renji, Urahara, Aizen).
-- **Musique** : Openings / Endings / OSTs avec lecteur YouTube intégré (playlist officielle).
-- **Extras UX/UI** : jauge de reiatsu, particules de reiatsu, curseur lumineux, thème **Hueco Mundo ☽ / Soul Society ☀**, responsive, `prefers-reduced-motion`.
+## 🎞️ Le film
+Sept actes, 42 séquences, 420 secondes :
 
-## 🚀 Déploiement (GitHub Pages)
-Settings → Pages → Branch: `main`, dossier: `/bleach`.
-URL : `https://<votre-user>.github.io/viral-pulse-IA/bleach/`
+1. **La ville endormie** — Karasuma, 2 h 47. Kaï Ryūzaki veille, sa lame muette au fourreau.
+2. **L'arrivée du Ryū** — le ciel se déchire, l'ombre millénaire absorbe les âmes.
+3. **La lame muette** — Kaï attaque et échoue. Le Ryū : « Ta lame est muette parce que tu as peur d'écouter. »
+4. **Le souvenir** — flashback : le maître et la leçon des noms.
+5. **L'entraînement intérieur** — le monde intérieur de Kaï, l'esprit de sa lame.
+6. **La libération** — « Rugis, KAZEHARIKARI ! »
+7. **Le dernier souffle** — le duel final, l'aube sur Karasuma.
 
-Fonctionne aussi tel quel sur Netlify, Vercel ou tout hébergeur statique.
+## 🎮 Fonctionnalités du lecteur
+- Lecture / pause / reprise, barre de progression cliquable (naviguer dans le film), temps affiché, écran de fin.
+- Sous-titres narratifs synchronisés et badge d'acte animé.
+- Aperçu de la première image avant lecture.
+
+## 🚀 Déploiement
+Site statique sans dépendance — fonctionne sur Vercel, Netlify, GitHub Pages tel quel.
 
 ## 📁 Structure
 ```
-bleach/
-├── index.html
-├── css/style.css
-├── js/app.js
-└── README.md
+index.html
+css/style.css
+js/film.js
 ```
 
 ## ⚖️ Mentions
-Fan-site non officiel, sans but commercial. BLEACH © Tite Kubo / Shueisha / TV Tokyo. Musiques diffusées via le lecteur YouTube officiel ; tous les visuels sont créés en SVG/CSS (aucune image protégée hébergée).
+Œuvre d'animation **originale** : personnages, histoire et graphismes créés spécifiquement pour ce projet. Toute ressemblance avec des œuvres existantes est volontairement évitée.
