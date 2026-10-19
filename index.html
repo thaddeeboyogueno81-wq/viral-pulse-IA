@@ -4,12 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BLEACH — Soul Society Experience</title>
-<meta name="description" content="Site fan interactif dédié à Bleach : chronologie animée 2001-2026, zanpakutō, bankai animés, openings, endings et OSTs.">
+<meta name="description" content="Site fan interactif dédié à Bleach : chronologie animée 2001-2026, personnages, zanpakutō, bankai, openings, endings et OSTs.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Noto+Serif+JP:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<canvas id="bg-scroll"></canvas>
 <canvas id="particles"></canvas>
 <canvas id="bankai-fx"></canvas>
 <div id="bankai-name-overlay"></div>
@@ -21,15 +22,15 @@
   <nav>
     <a href="#hero">Accueil</a>
     <a href="#timeline">Chronologie</a>
-    <a href="#zanpakuto">Zanpakutō</a>
+    <a href="#zanpakuto">Personnages</a>
     <a href="#musique">Musique</a>
   </nav>
   <button id="theme-btn" title="Changer de monde">☽ Hueco Mundo</button>
 </header>
 
 <section id="hero">
-  <div class="hero-layer" data-depth="0.2" id="hero-kanji">卍</div>
-  <div class="hero-layer" data-depth="0.5" id="hero-katana">
+  <div class="hero-layer" data-depth="0.15" id="hero-kanji">卍</div>
+  <div class="hero-layer" data-depth="0.45" id="hero-katana">
     <svg viewBox="0 0 200 520" aria-hidden="true">
       <defs>
         <linearGradient id="hg" x1="0" y1="0" x2="1" y2="0">
@@ -72,8 +73,8 @@
 </section>
 
 <section id="zanpakuto">
-  <h2 class="section-title reveal">Zanpakutō <em>& Bankai</em></h2>
-  <p class="section-sub reveal">Clique sur une carte pour libérer le Bankai et déclencher son animation.</p>
+  <h2 class="section-title reveal">Personnages, Zanpakutō <em>& Bankai</em></h2>
+  <p class="section-sub reveal">Survole les cartes (effet 3D), clique pour libérer le Bankai et son animation.</p>
   <div id="cards"></div>
 </section>
 
@@ -90,7 +91,7 @@
 
 <footer>
   <p>BLEACH © Tite Kubo / Shueisha · TV Tokyo · Ce site est un <strong>fan-site non officiel</strong> sans but commercial.</p>
-  <p class="foot-note">Tous les visuels du site sont créés en code (SVG / Canvas). Bankai : deploy.</p>
+  <p class="foot-note">Tous les visuels sont des créations originales en SVG / Canvas.</p>
 </footer>
 
 <div id="player-modal" aria-hidden="true">

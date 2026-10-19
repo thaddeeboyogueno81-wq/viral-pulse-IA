@@ -10,6 +10,7 @@ body.light{
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:'Rajdhani',sans-serif;overflow-x:hidden;transition:background .6s,color .6s}
+#bg-scroll{position:fixed;inset:0;z-index:-1;pointer-events:none}
 #particles{position:fixed;inset:0;z-index:0;pointer-events:none}
 #cursor-glow{position:fixed;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(230,57,70,.16),transparent 65%);transform:translate(-50%,-50%);pointer-events:none;z-index:1;transition:opacity .4s}
 section{position:relative;z-index:2}
@@ -72,13 +73,13 @@ h1.glitch::after{color:var(--gold);animation:gl2 2.4s infinite linear alternate-
 #cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:28px;max-width:1300px;margin:0 auto 100px;padding:0 24px;perspective:1400px}
 .card{position:relative;height:430px;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.4,0,.2,1)}
 .card.flipped{transform:rotateY(180deg)}
-.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:18px;border:1px solid var(--line);background:linear-gradient(160deg,var(--card),var(--bg2));padding:24px;display:flex;flex-direction:column;overflow:hidden}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;border:1px solid var(--line);background:linear-gradient(160deg,var(--card),var(--bg2));padding:24px;display:flex;flex-direction:column;overflow:hidden}
 .face .aura{position:absolute;width:240px;height:240px;border-radius:50%;background:var(--aura);filter:blur(70px);opacity:.35;top:-60px;right:-60px}
 .face.back{transform:rotateY(180deg);justify-content:center}
 .card h3{font-size:22px;letter-spacing:1px}
 .card .role{color:var(--dim);text-transform:uppercase;letter-spacing:3px;font-size:12px;margin-top:4px}
-.katana{flex:1;display:flex;align-items:center;justify-content:center}
-.katana svg{width:120px;filter:drop-shadow(0 0 18px var(--aura))}
+.char-art{flex:1;display:flex;align-items:flex-end;justify-content:center;min-height:0}
+.char-art svg{width:82%;max-height:100%;filter:drop-shadow(0 0 16px var(--aura))}
 .release{font-weight:700;letter-spacing:1px;color:var(--aura);text-align:center;text-transform:uppercase;font-size:13px}
 .bankai-name{font-family:'Cinzel',serif;font-size:26px;color:var(--aura);text-shadow:0 0 25px var(--aura);margin:8px 0 14px}
 .bankai-desc{color:var(--dim);line-height:1.65}
@@ -124,5 +125,6 @@ body.shaking{animation:shake .5s}
   #era-visual{height:38vh;top:14vh}
   #nav nav{display:none}
   #cards{perspective:none}
+  #hero-katana{width:150px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
