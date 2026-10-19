@@ -4,13 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BLEACH — Soul Society Experience</title>
-<meta name="description" content="Site fan interactif dédié à Bleach : chronologie animée 2001-2026, zanpakutō, bankai, openings, endings et OSTs.">
+<meta name="description" content="Site fan interactif dédié à Bleach : chronologie animée 2001-2026, zanpakutō, bankai animés, openings, endings et OSTs.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Noto+Serif+JP:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <canvas id="particles"></canvas>
+<canvas id="bankai-fx"></canvas>
+<div id="bankai-name-overlay"></div>
 <div id="cursor-glow"></div>
 <div id="reiatsu-bar"><div id="reiatsu-fill"></div><span id="reiatsu-year">2001</span></div>
 
@@ -71,7 +73,7 @@
 
 <section id="zanpakuto">
   <h2 class="section-title reveal">Zanpakutō <em>& Bankai</em></h2>
-  <p class="section-sub reveal">Clique sur une carte pour libérer le Bankai. Bouge la souris pour l'effet 3D.</p>
+  <p class="section-sub reveal">Clique sur une carte pour libérer le Bankai et déclencher son animation.</p>
   <div id="cards"></div>
 </section>
 
@@ -88,7 +90,7 @@
 
 <footer>
   <p>BLEACH © Tite Kubo / Shueisha · TV Tokyo · Ce site est un <strong>fan-site non officiel</strong> sans but commercial.</p>
-  <p class="foot-note">Bankai : deploy. Vercel. Code pushed with ♥ reiatsu.</p>
+  <p class="foot-note">Tous les visuels du site sont créés en code (SVG / Canvas). Bankai : deploy.</p>
 </footer>
 
 <div id="player-modal" aria-hidden="true">

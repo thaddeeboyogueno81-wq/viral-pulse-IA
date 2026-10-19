@@ -6,22 +6,23 @@ var ERAS = [
   {y:'2004', kanji:'尸', c1:'#2a0508', c2:'#ff5a5f', t:'Arc Soul Society & début de l\u0027anime', d:'Octobre 2004 : l\u0027anime TV Tokyo adapte le manga. L\u0027arc Soul Society (infiltration du Seireitei, Gotei 13, duel Byakuya vs Ichigo) propulse la série au rang de classique.'},
   {y:'2007', kanji:'虚', c1:'#0a1a1e', c2:'#7bdff2', t:'Arrancar & Hueco Mundo', d:'Ulquiorra, Grimmjow, Aizen trahit la Soul Society. Ichigo maîtrise le Vizard, le monde d\u0027Hueco Mundo et les Espadas donnent au manga son combat le plus tragique.'},
   {y:'2011', kanji:'卍', c1:'#150a20', c2:'#b791ff', t:'Fullbring & fin de l\u0027anime', d:'Arc Lost Agent (Fullbring, Xcution) : Ichigo, privé de ses pouvoirs, les renaît. Mars 2012 : l\u0027anime s\u0027arrête — les fans attendront 10 ans.'},
-  {y:'2018', kanji:'戦', c1:'#1b0505', c2:'#ffb703', t:'Annonce du retour', d:'Le manga se conclut avec l\u0027arc Thousand-Year Blood War (guerre sanglante de mille ans) : Yhwach, les Quincy, l\u0027origine de tout. Puis le choc : l\u0027anime de la TYBW est annoncé.'},
+  {y:'2018', kanji:'戦', c1:'#1b0505', c2:'#ffb703', t:'Annonce du retour', d:'Le manga se conclut avec l\u0027arc Thousand-Year Blood War : Yhwach, les Quincy, l\u0027origine de tout. Puis le choc : l\u0027anime de la TYBW est annoncé.'},
   {y:'2022', kanji:'血', c1:'#081026', c2:'#4ea8ff', t:'TYBW — Cour 1', d:'Octobre 2022 : Thousand-Year Blood War revient avec une animation de nouvelle génération (studio Pierrot). L\u0027opening "Scar" de Tatsuya Kitani devient culte.'},
   {y:'2023', kanji:'離', c1:'#031a14', c2:'#4dd8a4', t:'TYBW — Cour 2 "The Separation"', d:'La guerre s\u0027intensifie : séparation des mondes, révélations sur l\u0027histoire des Quincy. L\u0027animation des bankai atteint un niveau jamais vu.'},
   {y:'2024', kanji:'闘', c1:'#26120a', c2:'#ff9e4f', t:'TYBW — Cour 3 "The Conflict"', d:'Le conflit final se rapproche : les combats de Yamamoto, la vraie puissance de Kenpachi (Nozarashi), et la reformation de l\u0027escouade Ichigo.'},
   {y:'2026', kanji:'終', c1:'#1a1208', c2:'#ffd700', t:'Le Crépuscule — et l\u0027au-delà', d:'Le Cour 4 conclut la guerre de mille ans en apothéose. Bleach vit à travers ses suites et spin-offs (Burn the Witch), ses jeux, et une communauté de fans plus forte que jamais. Death. The End. and Beyond.'}
 ];
 
+// fx: type d'animation unique par personnage
 var CHARS = [
-  {name:'Ichigo Kurosaki', role:'Shinigami Daikō', zan:'Zangetsu', cmd:'(Shikai permanent)', bankai:'Tensa Zangetsu', bd:'La lame féroce comprimée en une katana noire. Vitesse et Getsuga Tenshō décuplés, puis le Getsuga final absorbe tout le reiatsu.', aura:'#e63946', blade:'#16161c'},
-  {name:'Rukia Kuchiki', role:'Lieutenant — 13e Division', zan:'Sode no Shirayuki', cmd:'Mae! (Danse!)', bankai:'Hakka no Togame', bd:'La plus belle zanpakutō de glace fige absolument tout dans un immense cercle de glace — au prix du corps de Rukia elle-même.', aura:'#bfe8ff', blade:'#e8f4ff'},
-  {name:'Byakuya Kuchiki', role:'Capitaine — 6e Division', zan:'Senbonzakura', cmd:'Chire! (Éparpille-toi!)', bankai:'Senbonzakura Kageyoshi', bd:'Des milliards de lames-pétales invisibles détruisent tout dans un dôme de sakura. Techniques secrètes : Senkei, Gokei, Shukei.', aura:'#ffb7d5', blade:'#f2e8ff'},
-  {name:'Kenpachi Zaraki', role:'Capitaine — 11e Division', zan:'Nozarashi', cmd:'Nomi (Bois!)', bankai:'Kenpachi: Zaraki', bd:'Sa force brute n\u0027était que la libération partielle de Nozarashi. Le vrai bankai transforme Zaraki en oni dévastateur, inconscient de toute limite.', aura:'#c9a227', blade:'#8a8a8a'},
-  {name:'Tōshirō Hitsugaya', role:'Capitaine — 10e Division', zan:'Hyōrinmaru', cmd:'Sōten ni zase! (Trône aux cieux gelés!)', bankai:'Daiguren Hyōrinmaru', bd:'Le dragon de glace le plus puissant : ailes de glace, fleurs de glace en sabbat de 4 minutes — et sa forme adulte après la TYBW.', aura:'#7bdff2', blade:'#dff4ff'},
-  {name:'Renji Abarai', role:'Lieutenant — 6e Division', zan:'Zabimaru', cmd:'Hoero! (Rugis!)', bankai:'Sōō Zabimaru', bd:'Le serpent-fouet d\u0027os devient une armure de singe-roi : la forme féroce maîtrisée contre Mask de Masculine lors de la TYBW.', aura:'#ff7b4f', blade:'#e8d9c5'},
-  {name:'Kisuke Urahara', role:'Ex-capitaine — 12e Division', zan:'Benihime', cmd:'Okiro! (Réveille-toi!)', bankai:'Kannonbiraki Benihime', bd:'La princesse écarlate "ouvre" tout : yeux, plaies, destins. Urahara ne montre ce bankai qu\u0027une fois... et c\u0027était déjà gagné.', aura:'#c1121f', blade:'#2b1a1a'},
-  {name:'Sōsuke Aizen', role:'Traître — Ex-capitaine 5e Div.', zan:'Kyōka Suigetsu', cmd:'(Hypnose parfaite)', bankai:'??? — Jamais révélé', bd:'L\u0027illusion absolue contrôle les cinq sens de quiconque a vu ne serait-ce qu\u0027une fois sa libération. Son bankai n\u0027a jamais eu besoin d\u0027exister.', aura:'#b791ff', blade:'#9b8cff'}
+  {name:'Ichigo Kurosaki', role:'Shinigami Daikō', zan:'Zangetsu', cmd:'(Shikai permanent)', bankai:'Tensa Zangetsu', bd:'La lame féroce comprimée en une katana noire. Vitesse et Getsuga Tenshō décuplés, puis le Getsuga final absorbe tout le reiatsu.', aura:'#e63946', blade:'#16161c', fx:'getsuga'},
+  {name:'Rukia Kuchiki', role:'Lieutenant — 13e Division', zan:'Sode no Shirayuki', cmd:'Mae! (Danse!)', bankai:'Hakka no Togame', bd:'La plus belle zanpakutō de glace fige absolument tout dans un immense cercle de glace — au prix du corps de Rukia elle-même.', aura:'#bfe8ff', blade:'#e8f4ff', fx:'ice'},
+  {name:'Byakuya Kuchiki', role:'Capitaine — 6e Division', zan:'Senbonzakura', cmd:'Chire! (Éparpille-toi!)', bankai:'Senbonzakura Kageyoshi', bd:'Des milliards de lames-pétales invisibles détruisent tout dans un dôme de sakura. Techniques secrètes : Senkei, Gokei, Shukei.', aura:'#ffb7d5', blade:'#f2e8ff', fx:'sakura'},
+  {name:'Kenpachi Zaraki', role:'Capitaine — 11e Division', zan:'Nozarashi', cmd:'Nomi (Bois!)', bankai:'Kenpachi: Zaraki', bd:'Sa force brute n\u0027était que la libération partielle de Nozarashi. Le vrai bankai transforme Zaraki en oni dévastateur, inconscient de toute limite.', aura:'#c9a227', blade:'#8a8a8a', fx:'onslaught'},
+  {name:'Tōshirō Hitsugaya', role:'Capitaine — 10e Division', zan:'Hyōrinmaru', cmd:'Sōten ni zase! (Trône aux cieux gelés!)', bankai:'Daiguren Hyōrinmaru', bd:'Le dragon de glace le plus puissant : ailes de glace, fleurs de glace en sabbat de 4 minutes — et sa forme adulte après la TYBW.', aura:'#7bdff2', blade:'#dff4ff', fx:'dragon'},
+  {name:'Renji Abarai', role:'Lieutenant — 6e Division', zan:'Zabimaru', cmd:'Hoero! (Rugis!)', bankai:'Sōō Zabimaru', bd:'Le serpent-fouet d\u0027os devient une armure de singe-roi : la forme féroce maîtrisée contre Mask de Masculine lors de la TYBW.', aura:'#ff7b4f', blade:'#e8d9c5', fx:'whip'},
+  {name:'Kisuke Urahara', role:'Ex-capitaine — 12e Division', zan:'Benihime', cmd:'Okiro! (Réveille-toi!)', bankai:'Kannonbiraki Benihime', bd:'La princesse écarlate "ouvre" tout : yeux, plaies, destins. Urahara ne montre ce bankai qu\u0027une fois... et c\u0027était déjà gagné.', aura:'#c1121f', blade:'#2b1a1a', fx:'opening'},
+  {name:'Sōsuke Aizen', role:'Traître — Ex-capitaine 5e Div.', zan:'Kyōka Suigetsu', cmd:'(Hypnose parfaite)', bankai:'??? — Jamais révélé', bd:'L\u0027illusion absolue contrôle les cinq sens de quiconque a vu ne serait-ce qu\u0027une fois sa libération. Son bankai n\u0027a jamais eu besoin d\u0027exister.', aura:'#b791ff', blade:'#9b8cff', fx:'illusion'}
 ];
 
 var TRACKS = [
@@ -54,10 +55,146 @@ function buildEras(){
   ERAS.forEach(function(e){
     var div = document.createElement('div');
     div.className = 'era reveal';
-    div.dataset.y = e.y;
     div.innerHTML = '<div class="y">' + e.y + '</div><h3>' + e.kanji + ' — ' + e.t + '</h3><p>' + e.d + '</p>';
     track.appendChild(div);
   });
+}
+
+/* ============ MOTEUR D'ANIMATION BANKAI (Canvas) ============ */
+var FX = { canvas: null, ctx: null, parts: [], running: false, type: null, aura: '#e63946', start: 0, dur: 4000 };
+
+function triggerBankaiFX(c){
+  FX.canvas = document.getElementById('bankai-fx');
+  FX.ctx = FX.canvas.getContext('2d');
+  FX.canvas.width = innerWidth; FX.canvas.height = innerHeight;
+  FX.type = c.fx; FX.aura = c.aura; FX.parts = []; FX.start = performance.now(); FX.dur = 4200;
+  FX.running = true;
+  FX.canvas.classList.add('active');
+  document.body.classList.add('shaking');
+  setTimeout(function(){ document.body.classList.remove('shaking'); }, 600);
+  // overlay nom du bankai
+  var ov = document.getElementById('bankai-name-overlay');
+  ov.style.setProperty('--bfx', c.aura);
+  ov.innerHTML = '<span>' + c.bankai + '</span>';
+  ov.classList.add('show');
+  requestAnimationFrame(fxTick);
+  setTimeout(function(){ ov.classList.remove('show'); }, 2600);
+  setTimeout(function(){ FX.running = false; FX.canvas.classList.remove('active'); }, FX.dur);
+}
+
+function fxTick(){
+  if (!FX.running) return;
+  var ctx = FX.ctx, t = (performance.now() - FX.start) / FX.dur; // 0→1
+  ctx.clearRect(0, 0, FX.canvas.width, FX.canvas.height);
+  var cx = FX.canvas.width / 2, cy = FX.canvas.height / 2;
+  var type = FX.type;
+
+  if (type === 'getsuga'){
+    // croissant d'énergie noir-rouge qui balaie l'écran
+    var r = Math.max(FX.canvas.width, FX.canvas.height) * t * 1.1;
+    ctx.save();
+    ctx.translate(cx, cy); ctx.rotate(-0.5 + t * 0.4);
+    var grad = ctx.createLinearGradient(-r, 0, r, 0);
+    grad.addColorStop(0, 'rgba(10,10,12,0.95)');
+    grad.addColorStop(0.6, 'rgba(230,57,70,' + (1 - t) * 0.9 + ')');
+    grad.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = grad;
+    ctx.beginPath();
+    ctx.moveTo(-r, 0);
+    ctx.quadraticCurveTo(0, -r * 0.35, r, 0);
+    ctx.quadraticCurveTo(0, -r * 0.18, -r, 0);
+    ctx.fill();
+    ctx.restore();
+  } else if (type === 'ice'){
+    // cristal de glace expansif + flocons
+    var rr = Math.min(cx, cy) * (0.2 + t * 1.4);
+    ctx.strokeStyle = 'rgba(191,232,255,' + (1 - t) + ')';
+    ctx.lineWidth = 3;
+    for (var i = 0; i < 12; i++){
+      var a = i / 12 * Math.PI * 2;
+      ctx.beginPath();
+      ctx.moveTo(cx + Math.cos(a) * rr * 0.2, cy + Math.sin(a) * rr * 0.2);
+      ctx.lineTo(cx + Math.cos(a) * rr, cy + Math.sin(a) * rr);
+      ctx.stroke();
+    }
+    for (var k = 0; k < 30; k++){
+      var px = Math.random() * FX.canvas.width, py = Math.random() * FX.canvas.height;
+      ctx.fillStyle = 'rgba(220,245,255,' + Math.random() * (1 - t) + ')';
+      ctx.beginPath(); ctx.arc(px, py, Math.random() * 3 + 1, 0, 6.283); ctx.fill();
+    }
+  } else if (type === 'sakura'){
+    // pétales-lames tourbillonnants
+    if (FX.parts.length < 400) for (var j = 0; j < 12; j++) FX.parts.push({x: cx, y: cy, vx: (Math.random()-0.5)*14, vy: (Math.random()-0.5)*14, r: Math.random()*5+2, a: Math.random()*6.283, va: (Math.random()-0.5)*0.3, life: 1});
+    ctx.fillStyle = 'rgba(255,183,213,0.9)';
+    FX.parts.forEach(function(p){
+      p.x += p.vx; p.y += p.vy; p.vx *= 1.02; p.vy *= 1.02; p.a += p.va; p.life -= 0.008;
+      if (p.life <= 0) return;
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a);
+      ctx.globalAlpha = Math.max(0, p.life) * (1 - t * 0.5);
+      ctx.beginPath(); ctx.ellipse(0, 0, p.r * 2, p.r, 0, 0, 6.283); ctx.fill();
+      ctx.restore();
+    });
+    ctx.globalAlpha = 1;
+  } else if (type === 'onslaught'){
+    // ondes de choc jaunes/noires violentes
+    for (var n = 0; n < 5; n++){
+      var pr = (t * 1.6 + n * 0.2) % 1;
+      ctx.strokeStyle = n % 2 ? 'rgba(201,162,39,' + (1 - pr) + ')' : 'rgba(20,10,0,' + (1 - pr) + ')';
+      ctx.lineWidth = 14 * (1 - pr) + 2;
+      ctx.beginPath(); ctx.arc(cx, cy, pr * Math.max(cx, cy) * 1.2, 0, 6.283); ctx.stroke();
+    }
+  } else if (type === 'dragon'){
+    // dragon de glace serpentin
+    ctx.lineWidth = 26 * (1 - t * 0.6);
+    var grad2 = ctx.createLinearGradient(0, 0, FX.canvas.width, FX.canvas.height);
+    grad2.addColorStop(0, 'rgba(123,223,242,0)');
+    grad2.addColorStop(0.5, 'rgba(123,223,242,' + (1 - t) + ')');
+    grad2.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.strokeStyle = grad2; ctx.lineCap = 'round';
+    ctx.beginPath();
+    for (var s = 0; s <= 60; s++){
+      var p2 = s / 60;
+      var x2 = -100 + p2 * (FX.canvas.width + 200);
+      var y2 = cy + Math.sin(p2 * 10 + performance.now() / 300) * (120 * (1 - t));
+      if (s === 0) ctx.moveTo(x2, y2); else ctx.lineTo(x2, y2);
+    }
+    ctx.stroke();
+  } else if (type === 'whip'){
+    // fouet d'os segmenté qui claque
+    ctx.strokeStyle = 'rgba(255,123,79,' + (1 - t) + ')';
+    ctx.lineWidth = 10;
+    ctx.beginPath();
+    var segs = 14;
+    for (var q = 0; q <= segs; q++){
+      var p3 = q / segs;
+      var x3 = cx - 300 + p3 * 600;
+      var y3 = cy + Math.sin(p3 * 6 + performance.now() / 150) * 160 * (1 - t) * (1 - p3);
+      if (q === 0) ctx.moveTo(x3, y3); else ctx.lineTo(x3, y3);
+    }
+    ctx.stroke();
+  } else if (type === 'opening'){
+    // faille rouge qui "ouvre" la réalité
+    ctx.fillStyle = 'rgba(193,18,31,' + (1 - t) * 0.8 + ')';
+    ctx.save(); ctx.translate(cx, cy); ctx.rotate(0.3);
+    var hh = t * FX.canvas.height * 0.7;
+    ctx.beginPath(); ctx.ellipse(0, 0, 8 + t * 40, hh, 0, 0, 6.283); ctx.fill();
+    ctx.restore();
+  } else if (type === 'illusion'){
+    // kaléidoscope violet hypnotique
+    var petals = 9;
+    ctx.save(); ctx.translate(cx, cy); ctx.rotate(performance.now() / 700);
+    for (var m = 0; m < petals; m++){
+      var am = m / petals * 6.283;
+      var g3 = ctx.createRadialGradient(0, 0, 0, Math.cos(am) * 200, Math.sin(am) * 200, 260);
+      g3.addColorStop(0, 'rgba(183,145,255,0)');
+      g3.addColorStop(0.5, 'rgba(183,145,255,' + (1 - t) * 0.5 + ')');
+      g3.addColorStop(1, 'rgba(183,145,255,0)');
+      ctx.fillStyle = g3;
+      ctx.beginPath(); ctx.arc(Math.cos(am) * 200, Math.sin(am) * 200, 260, 0, 6.283); ctx.fill();
+    }
+    ctx.restore();
+  }
+  requestAnimationFrame(fxTick);
 }
 
 function buildCards(){
@@ -80,7 +217,11 @@ function buildCards(){
         '<p class="bankai-desc">' + c.bd + '</p>' +
         '<div class="hint">Clique → Shikai</div>' +
       '</div>';
-    card.addEventListener('click', function(){ card.classList.toggle('flipped'); });
+    card.addEventListener('click', function(){
+      var wasFlipped = card.classList.contains('flipped');
+      card.classList.toggle('flipped');
+      if (!wasFlipped) triggerBankaiFX(c); // l'animation ne se déclenche qu'à la libération
+    });
     card.addEventListener('mousemove', function(ev){
       if (card.classList.contains('flipped')) return;
       var r = card.getBoundingClientRect();
@@ -97,7 +238,7 @@ var currentType = 'Opening';
 function buildMusic(){
   var grid = document.getElementById('music-grid');
   grid.innerHTML = '';
-  TRACKS.forEach(function(t, i){
+  TRACKS.forEach(function(t){
     if (t.type !== currentType) return;
     var el = document.createElement('div');
     el.className = 'track';
@@ -210,4 +351,7 @@ document.getElementById('theme-btn').addEventListener('click', function(){
 });
 
 buildEras(); buildCards(); buildMusic(); initParticles(); initScrollFX(); initHeroParallax();
-addEventListener('resize', function(){ W = document.getElementById('particles').width = innerWidth; H = document.getElementById('particles').height = innerHeight; });
+addEventListener('resize', function(){
+  W = document.getElementById('particles').width = innerWidth;
+  H = document.getElementById('particles').height = innerHeight;
+});
