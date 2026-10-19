@@ -3,74 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LE DERNIER RYŪ — Court-métrage animé</title>
-<meta name="description" content="Court-métrage d'animation original de 7 minutes : l'histoire de Kaï, jeune shinigami, face au Ryū des ténèbres.">
+<title>LE DERNIER RYŪ — Le Jeu</title>
+<meta name="description" content="Jeu d'action original : incarnez Kaï, maîtrisez Kazehikari et affrontez le Ryū des ténèbres.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Noto+Serif+JP:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<canvas id="bg-ambient"></canvas>
-
 <header id="nav">
   <div class="logo">LE DERNIER <span>RYŪ</span></div>
   <nav>
-    <a href="#film">Regarder le film</a>
-    <a href="#histoire">L'histoire</a>
-    <a href="#actes">Les actes</a>
+    <a href="#jeu">Jouer</a>
+    <a href="#aide">Commandes</a>
+    <a href="#histoire">Histoire</a>
   </nav>
 </header>
 
-<section id="film">
-  <div class="player-wrap reveal">
-    <canvas id="screen" width="1280" height="720"></canvas>
-    <div id="subtitle"></div>
-    <div id="act-badge"></div>
-    <div id="loader">
-      <div class="loader-ring"></div>
-      <p>Préparation du film…</p>
+<section id="jeu">
+  <div class="game-wrap reveal">
+    <div id="hud">
+      <div class="hud-bar"><span class="hud-label">PV</span><div class="bar"><div id="hp-fill"></div></div><span id="hp-txt">100</span></div>
+      <div class="hud-bar"><span class="hud-label">REIATSU</span><div class="bar"><div id="rei-fill"></div></div><span id="rei-txt">0%</span></div>
+      <div class="hud-right"><span id="score-txt">Score 0</span><span id="wave-txt">Vague 1</span></div>
     </div>
-    <div class="controls">
-      <button id="play-btn">▶ Lecture</button>
-      <div id="progress"><div id="progress-fill"></div><div id="progress-cursor"></div></div>
-      <span id="time-display">0:00 / 7:00</span>
-      <button id="restart-btn" title="Recommencer">⟲</button>
+    <canvas id="screen" width="1280" height="720"></canvas>
+    <div id="boss-hud"><span>LE RYŪ DES TÉNÈBRES</span><div class="bar"><div id="boss-fill"></div></div></div>
+    <div id="overlay">
+      <div id="ov-box">
+        <h1 id="ov-title">LE DERNIER RYŪ</h1>
+        <p id="ov-text">Kaï Ryūzaki, ta lame est enfin éveillée. Les ombres arrivent par vagues. Tiens jusqu\u0027au Ryū — et libère Kazehikari.</p>
+        <button id="ov-btn">▶ COMMENCER</button>
+        <p class="ov-hint">ZQSD/WASD ou flèches : bouger · J ou Espace : attaquer · K ou Maj : esquive · B : BANKAI</p>
+      </div>
     </div>
   </div>
-  <p class="section-sub">Un court-métrage original de 7 minutes — animation Canvas, 7 actes, 42 séquences.</p>
+</section>
+
+<section id="aide">
+  <h2 class="section-title reveal">Commandes <em>& Astuces</em></h2>
+  <div class="help-grid">
+    <div class="help-card reveal"><h3>⚔ Attaque</h3><p><b>J</b> ou <b>Espace</b> — un slash de sabre. Frapper un ennemi remplit le reiatsu. Enchaîne pour les combos.</p></div>
+    <div class="help-card reveal"><h3>💨 Esquive</h3><p><b>K</b> ou <b>Maj</b> — un dash rapide avec invincibilité d\u0027un instant. Le cœur du jeu : esquiver vaut mieux que subir.</p></div>
+    <div class="help-card reveal"><h3>🌊 Bankai</h3><p><b>B</b> quand le reiatsu est plein — Kazehikari : dégâts doublés, slash de vent à distance, aura bleue pendant 8 s.</p></div>
+    <div class="help-card reveal"><h3>👣 Mobile</h3><p>Sur écran tactile, utilise le joystick virtuel (bas gauche) et les boutons ATQ / DASH / BANKAI (bas droite).</p></div>
+  </div>
 </section>
 
 <section id="histoire">
-  <h2 class="section-title reveal">L'Histoire <em>en bref</em></h2>
+  <h2 class="section-title reveal">L\u0027<em>Histoire</em></h2>
   <div class="story-grid">
-    <div class="story-card reveal">
-      <div class="s-kanji">龍</div>
-      <h3>Kaï Ryūzaki</h3>
-      <p>Jeune shinigami de la Division 13, il n'a jamais réussi à libérer son zanpakutō. Son sabre reste muet — jusqu'à la nuit où le Ryū des ténèbres descend sur Karasuma.</p>
-    </div>
-    <div class="story-card reveal">
-      <div class="s-kanji">影</div>
-      <h3>Le Ryū des Ténèbres</h3>
-      <p>Un esprit millénaire dévoré par la haine, qui efface les âmes de la ville, nuit après nuit. Il ne cherche pas la destruction : il cherche quelqu'un capable de l'arrêter.</p>
-    </div>
-    <div class="story-card reveal">
-      <div class="s-kanji">心</div>
-      <h3>Le choix de Kaï</h3>
-      <p>Libérer son zanpakutō exige de prononcer le nom de la lame. Mais prononcer un nom, c'est accepter de perdre ce qu'on aime. Kaï a sept minutes pour comprendre pourquoi.</p>
-    </div>
+    <div class="story-card reveal"><div class="s-kanji">心</div><h3>Kaï Ryūzaki</h3><p>Le shinigami qu\u0027on croyait muet. Sa lame Kazehikari ne parle qu\u0027à ceux qui n\u0027ont plus peur de perdre. Cette nuit, elle rugit.</p></div>
+    <div class="story-card reveal"><div class="s-kanji">影</div><h3>Les Ombres</h3><p>Des fragments de haine vomis par la nuit de Karasuma. Elles chassent en meute et meurent d\u0027un seul coup de sabre — si la main ne tremble pas.</p></div>
+    <div class="story-card reveal"><div class="s-kanji">龍</div><h3>Le Ryū</h3><p>Le boss de la vague 5. Trois mille ans de solitude. Il ne cherche pas à te tuer : il cherche quelqu\u0027un capable de l\u0027arrêter. Montre-lui.</p></div>
   </div>
 </section>
 
-<section id="actes">
-  <h2 class="section-title reveal">Les <em>7 Actes</em></h2>
-  <div id="act-list"></div>
-</section>
-
 <footer>
-  <p>« Le Dernier Ryū » — œuvre d'animation <strong>originale</strong> créée en code (Canvas / JS). Toute ressemblance avec des œuvres existantes est volontairement évitée.</p>
-  <p class="foot-note">7 minutes. 7 actes. 1 lame à nommer.</p>
+  <p>« Le Dernier Ryū — Le Jeu » — jeu d\u0027action <strong>original</strong> créé en code (Canvas / JS).</p>
 </footer>
 
-<script src="js/film.js"></script>
+<script src="js/game.js"></script>
 </body>
 </html>

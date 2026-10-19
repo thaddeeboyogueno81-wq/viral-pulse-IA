@@ -1,1 +1,1 @@
-// Ce site ne sert plus que le court-métrage. Voir js/film.js
+// Ce site est désormais un jeu. Voir js/game.js
